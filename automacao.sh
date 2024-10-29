@@ -31,8 +31,14 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
 # adicionando o usuário no grupo docker para não precisar mais do sudo
-sudo usermod -aG docker $USER 
+sudo usermod -aG docker $USER
 newgrp docker
+
+sudo systemctl
+start docker
+sudo systemctl enable docker
+docker pull mysql:8.0.37
+docker run -d -p 3306:3306 --name db -e "MYSQL_ROOT_PASSWORD=tracksecure" mysql:8.0.37
 
 # Instalação do Node.js
 sudo apt install nodejs
@@ -40,4 +46,6 @@ sudo apt install npm
 
 # Configuração da aplicação Node
 git clone https://github.com/TrackSecure/Development
-
+cd /Site
+npm install
+npm start
