@@ -4,7 +4,7 @@ which python3 | grep /usr/bin/python3 # Verificando instalação do Python
 # Instalação das bibliotecas do Python
 sudo apt update && sudo apt upgrade -y
 sudo apt install python3-pip -y
-sudo apt install python3-venv
+sudo apt install python3-venv -y
 python3 -m venv amb
 source amb/bin/activate
 pip install psutil
@@ -34,18 +34,17 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo usermod -aG docker $USER
 newgrp docker
 
-sudo systemctl
-start docker
+sudo systemctl start docker
 sudo systemctl enable docker
 docker pull mysql:8.0.37
 docker run -d -p 3306:3306 --name db -e "MYSQL_ROOT_PASSWORD=tracksecure" mysql:8.0.37
 
 # Instalação do Node.js
-sudo apt install nodejs
-sudo apt install npm
+sudo apt install nodejs -y
+sudo apt install npm -y
 
 # Configuração da aplicação Node
 git clone https://github.com/TrackSecure/Development
-cd /Site
+cd Development/Site/
 npm install
 npm start
