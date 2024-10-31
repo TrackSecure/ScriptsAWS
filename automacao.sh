@@ -9,7 +9,7 @@ python3 -m venv amb
 source amb/bin/activate
 pip install psutil
 pip install boto3
-wget https://github.com/TrackSecure/Dev_Python/raw/refs/heads/main/teste_json.py
+wget https://github.com/TrackSecure/Dev_Python/raw/refs/heads/main/monitoramento.py
 deactivate
 
 # Configuração do Docker
