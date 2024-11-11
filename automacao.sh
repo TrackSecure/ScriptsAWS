@@ -37,15 +37,11 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 sudo systemctl start docker
 sudo systemctl enable docker
-docker pull mysql:8.0.37
-docker run -d -p 3306:3306 --name db -e "MYSQL_ROOT_PASSWORD=tracksecure" mysql:8.0.37
 
-# Instalação do Node.js
-sudo apt install nodejs -y
-sudo apt install npm -y
+# Criação do contâiner do banco de dados
+sudo docker pull brunoyujitaka/tracksecure_db
+sudo docker run -d -p 3306:3306 --name db -e " MYSQL_ROOT_PASSWORD=tracksecure" brunoyujitaka/tracksecure_db
 
-# Configuração da aplicação Node
-git clone https://github.com/TrackSecure/Development
-cd Development/Site/
-npm install
-npm start
+# Criação do contâiner da aplicação node
+sudo docker pull brunoyujitaka/tracksecure_site
+sudo docker run -d -p 3333:3333 --name site brunoyujitaka/tracksecure_site
