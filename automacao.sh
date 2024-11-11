@@ -41,6 +41,7 @@ sudo systemctl enable docker
 # Criação do contâiner do banco de dados
 sudo docker pull brunoyujitaka/tracksecure_db
 sudo docker run -d -p 3306:3306 --name db -e " MYSQL_ROOT_PASSWORD=tracksecure" brunoyujitaka/tracksecure_db
+sudo docker run db
 
 # Criação do contâiner da aplicação node
 sudo docker pull brunoyujitaka/tracksecure_site
