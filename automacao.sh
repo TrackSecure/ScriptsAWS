@@ -31,18 +31,10 @@ sudo apt-get update
 #instalando as últimas versões
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y
 
-# adicionando o usuário no grupo docker para não precisar mais do sudo
-# sudo usermod -aG docker $USER
-# newgrp docker
-
+# Iniciando o Docker
 sudo systemctl start docker
 sudo systemctl enable docker
 
-# Criação do contâiner do banco de dados
-sudo docker pull brunoyujitaka/tracksecure_db
-sudo docker run -d -p 3306:3306 --name db -e " MYSQL_ROOT_PASSWORD=tracksecure" brunoyujitaka/tracksecure_db
-sudo docker run db
-
-# Criação do contâiner da aplicação node
-sudo docker pull brunoyujitaka/tracksecure_site
-sudo docker run -d -p 3333:3333 --name site brunoyujitaka/tracksecure_site
+# Levantando serviços de banco de dados e site com Docker Compose
+wget https://github.com/TrackSecure/ScriptsAWS/raw/refs/heads/main/compose.yaml
+sudo docker compose up
