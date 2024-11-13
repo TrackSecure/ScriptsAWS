@@ -1,19 +1,16 @@
 services:
-		site:
-				image: brunoyujitaka/tracksecure_site:latest
-				ports:
-						- "3333:3333"
-				networks:
-						- rede-compose
-				depends-on:
-						- db
-		db:
-				image: brunoyujitaka/tracksecure_db:latest
-				ports:
-						- "3307:3306"
-				networks:
-						- rede-compose
+  site:
+    image: brunoyujitaka/tracksecure_site:latest
+    ports:
+      - "3333:3333"
+    networks:
+      - rede-compose
+  db:
+    image: brunoyujitaka/tracksecure_db:latest
+    ports:
+      - "3307:3306"
+    networks:
+      - rede-compose
 networks:
-		rede-compose:
-				driver: bridge
-				
+  rede-compose:
+    driver: bridge
