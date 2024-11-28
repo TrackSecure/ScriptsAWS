@@ -1,16 +1,4 @@
 #!/bin/bash
-which python3 | grep /usr/bin/python3 # Verificando instalação do Python
-
-# Instalação das bibliotecas do Python
-sudo apt update && sudo apt upgrade -y
-sudo apt install python3-pip -y
-sudo apt install python3-venv -y
-python3 -m venv amb
-source amb/bin/activate
-pip install psutil
-pip install boto3
-wget https://github.com/TrackSecure/Dev_Python/raw/refs/heads/main/monitoramento.py
-deactivate
 
 # Configuração do Docker
 # adicionando as chaves GPG (GNU Privacy Guard) do docker
