@@ -24,7 +24,6 @@ sudo systemctl start docker
 sudo systemctl enable docker
 
 # Levantando serviços de banco de dados e site com Docker Compose
-rm compose.yaml
 wget https://github.com/TrackSecure/ScriptsAWS/raw/refs/heads/main/compose.yaml
 sudo docker compose up --detach
 
@@ -36,4 +35,3 @@ python3 -m venv amb
 source amb/bin/activate
 pip install mysql-connector-python
 wget https://github.com/TrackSecure/Dev_Python/raw/refs/heads/main/uptime_downtime.py
-python3 uptime_downtime.py
