@@ -3,7 +3,7 @@
 # Configuração do Docker
 # adicionando as chaves GPG (GNU Privacy Guard) do docker
 which docker
-if [ $? = 0 ]
+if [ $? = 1 ]
     then 
         sudo apt-get update
         sudo apt-get install ca-certificates curl
